@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지 표현</h1>
+    {% load static %}
+    <img src="{% static 'duke.png' %}">
+    <ul>
+        <li><a href="https://www.google.com"><img src="{% static 'img/google.png' %}"></a></li>
+        <li><a href="https://www.naver.com"><img src="{% static 'img/naver.png' %}"></a></li>
+        <li><a href="https://www.daum.net"><img src="{% static 'img/daum.png' %}"></a></li>
+    </ul>
+</body>
+</html>

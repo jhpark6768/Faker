@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}faker{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    {% block activeClass %}
+    <script>
+      window.onload = function(){
+          document.getElementById('home').className = 'nav-link active';
+      }
+      
+      function logout(){
+        alert('로그아웃 되었습니다');
+        location.href="/index";
+      }
+
+      function neww(){
+        alert('Comming soon');
+      }
+    </script>
+    {% endblock %}
+    {% block cssblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+    <style>
+    #fakfont{
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+    #infont{
+
+      
+      font-family: 'Dongle', sans-serif;
+      font-size: 25px;
+      font-weight: lighter;
+
+    }
+
+    #login {
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #logout{
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+    </style>
+    {% endblock %}
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="home" viewBox="0 0 16 16">
+      <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+    </symbol>
+    <symbol id="speedometer2" viewBox="0 0 16 16">
+      <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+      <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 16 16">
+      <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+  <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="people-circle" viewBox="0 0 16 16">
+      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+    </symbol>
+    <symbol id="bell" viewBox="0 0 16 16">
+      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+    </symbol>
+  </svg>
+  
+  <div class="bg-dark text-white">
+      <div class="d-flex flex-center align-items-center justify-content-center justify-content-lg-start">
+        <a href="/index" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <h1 id="fakfont">Faker</h1>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
+          <li>
+            <a href="/index" class="nav-link text-white" id="infont">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/sleep/index" class="nav-link text-white" id="infont">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+              졸음운전 방지
+            </a>
+          </li>
+          <li>
+            <a href="/predict/index" class="nav-link text-white" id="infont">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#check"/></svg>
+              헬멧 안전 체크
+            </a>
+          </li>
+          <li>
+            <a href="https://www.google.com/maps/search/%EC%A1%B8%EC%9D%8C+%EC%89%BC%ED%84%B0" class="nav-link text-white" id="infont">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#bell"/></svg>
+              졸음쉼터 위치 안내
+            </a>
+          </li>
+        {% if user.is_active %}
+          <li>
+            <a href="/account/myinfo" class="nav-link text-white" id="user1" >
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+              {{user}}
+            </a>
+          </li>
+          <li>
+            <a href="/account/logout" class="nav-link text-white" id="logout" onclick="logout()">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+              로그아웃
+            </a>
+          </li>
+        {% else %}
+          <li class="menu">
+            <a href="/account/login" class="nav-link text-white" id="login" >
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
+              로그인
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+      </div>
+
+  </div>
+</head>
+<body>
+  {% block content %}
+  <div id="bg" style="background-image: url('{% static "img/cotton.jpg"%}')";>
+    <div class="faker" id="faker">
+      <img src="/static/img/helmet2.png" width=10%>
+      Faker
+      <img src="/static/img/vehicle.png" width=10%>
+    </div>
+  </div>
+  <table class="member">
+    <tr class="m_img">
+      <td><img src="/static/img/member1.png" width="50%"></td>
+      <td><img src="/static/img/member2.png" width="50%"></td>
+      <td><img src="/static/img/member3.png" width="50%"></td>
+      <td><img src="/static/img/member4.png" width="50%"></td>
+      <td><img src="/static/img/member5.png" width="50%"></td>
+      <td><img src="/static/img/member6.png" width="50%"></td>  
+    </tr>
+    <tr class="name">
+      <td>김태우</td>
+      <td>변호석</td>
+      <td>허자윤</td>
+      <td>박명진</td>
+      <td>박정호</td>
+      <td>김윤기</td>
+    </tr>
+    <tr class="intro">
+      <td>
+        <ul>
+          <li>Research</li>
+          <li>Train data</li>
+          <li>Yolov5</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Git</li>
+          <li>Labeling</li>
+          <li>Web 제작</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Train data</li>
+          <li>Yolov5</li>
+          <li>Labeling</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Eye detect</li>
+          <li>Yolov5</li>
+          <li>Research</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+            <li>Crawling</li>
+            <li>Labeling</li>
+            <li>Web 제작</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Crawling</li>
+          <li>Labeling</li>
+          <li>Web 제작</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+  <section class="gubun">
+    <article>
+      <a href="/sleep/index">
+        <dl>
+          <dt>
+            <span>
+              <img class="icon1" src="/static/img/icon_cpn1.png">
+            </span>
+          </dt>
+          <dd>졸음운전 방지</dd>
+        </dl>
+      </a>
+      <img class="use1" src="/static/img/img_use1.jpg">
+    </article>
+    <article>
+      <a href="/predict/index">
+        <dl>
+          <dt>
+            <span>
+              <img class="icon2" src="/static/img/icon_cpn2.png">
+            </span>
+          </dt>
+          <dd>헬멧 안전 체크</dd>
+        </dl>
+      </a>
+      <img class="use2" src="/static/img/img_use2.jpg">
+    </article>
+    <article>
+      <a href="https://www.google.com/maps/search/%EC%A1%B8%EC%9D%8C+%EC%89%BC%ED%84%B0">
+        <dl>
+          <dt>
+            <span>
+              <img class="icon3" src="/static/img/icon_cpn3.png">
+            </span>
+          </dt>
+          <dd>졸음쉼터 위치 안내</dd>
+        </dl>
+      </a>
+      <img class="use3" src="/static/img/img_use3.jpg">
+    </article>
+    <article>
+      <a href="#"  onclick="neww()">
+        <dl>
+          <dt>
+            <span>
+              <img class="icon4" src="/static/img/icon_cpn4.png">
+            </span>
+          </dt>
+          <dd>새로운 다른 기능</dd>
+        </dl>
+      </a>
+      <img class="use4" src="/static/img/img_use4.jpg">
+    </article>
+  </section>
+  <article class="prot">
+    <h3>Project Timeline</h3>
+    <div class="motionBox">
+      <img class="sam" src="/static/img/img_timeline2.png">
+    </div>
+  </article>
+
+  <div class="tool">
+    <h2>Development Tools</h2>
+    <table class="footericon">
+      <tr>
+        <td><img src="{% static 'img/python.jpg' %}" width="200" height="150"></td>
+        <td><img src="{% static 'img/yolov5.png' %}"width="200" height="150"></td>
+        <td><img src="{% static 'img/mysql.jpg' %}"width="200" height="150"></td>
+      </tr>
+      <tr>
+        <td><img src="{% static 'img/hjcb.webp' %}"width="200" height="150"></td>
+        <td><img src="{% static 'img/vscode.png' %}"width="200" height="150"></td>
+        <td><img src="{% static 'img/github.png' %}"width="200" height="150"></td>
+      </tr>
+    </table>
+  </div>
+  <br><br>
+  {% endblock %}
+  <footer>
+    <!-- 이건 혹시 몰라서 남겨둠
+    <i class="bi bi-envelope"></i>
+    <i class="bi bi-file-earmark-text"></i>
+    <i class="bi bi-github"></i>
+    <i class="bi bi-telephone"></i>
+    <i class="bi bi-geo-alt-fill"></i> -->
+
+    <table class="footericon">
+      <tr>
+        <td><a href="https://www.google.com/intl/ko/gmail/about/"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+        </svg></a></td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+          <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+          <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+        </svg></td>
+        <td><a href="https://github.com/Hoseok97/TeamProject_FaceChecker"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg></a></td>
+        <td><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+        </svg></td>
+        <td><a href="https://map.naver.com/v5/entry/place/1083256369?c=14128270.4239410,4516620.1820826,15,0,0,0,dh"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16" >
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+        </svg></a></td>
+      </tr>
+
+      <tr align="center" id="footfont">
+        <td>E-mail.<br>acorn@test.co.kr</td>
+        <td>마지막 프로젝트<br>딥러닝을 활용<br>1조</td>
+        <td>깃허브<br>Git </td>
+        <td>TEL. 02-2231-6412<br></td>
+        <td>오시는 위치<br>서울특별시 마포구<br>양화로122 LAB7빌딩<br>3층, 4층</td>
+      </tr>
+
+    </table>
+    <p class="copy">Copyright 2022 ©Acorn Co., Ltd. All rights reserved.</p>
+   </footer>

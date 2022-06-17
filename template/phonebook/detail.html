@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% block title %}전화번호 상세정보{% endblock %}
+{% block cssblock %}
+<style>
+    h3 {
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    #btnsort {
+        margin-left:43%;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    phone book detail(상세)페이지 입니다<br>
+    <table class="table table-hover">
+        <tr>
+            <th><span class="input-group-text">이름</span></th>
+            <td><span class="form-control">{{ user.name }}</span></td>
+        </tr>
+        <tr>
+            <th><span class="input-group-text">전화번호</span></th>
+            <td><span class="form-control">{{ user.telnum }}</span></td>
+        </tr>
+        <tr>  
+            <th><span class="input-group-text">이메일</span></th>
+            <td><span class="form-control">{{ user.email }}</span></td>
+        </tr>
+        <tr>
+            <th><span class="input-group-text">주소</span></th>
+            <td><span class="form-control">{{ user.address }}</span></td>
+        </tr>
+        <tr>
+            <th><span class="input-group-text">생년월일</span></th>
+            <td><span class="form-control">{{ user.birth }}</span></td>
+        </tr>
+    </table>
+    <!-- <a href="{% url 'PB:I' 1 %}"><input type="button" value="메인으로"></a><br>
+    <a href="{% url 'PB:I' 1 %}">메인으로</a><br>
+    <input type="button" onclick="mainlink()" value="메인으로"><br> -->
+    <div id="btnsort">
+    <button class="btn btn-outline-secondary" onclick="mainlink()">메인으로</button>
+    <a href="{% url 'PB:U' user.id%}"><button class="btn btn-outline-primary">수정</button></a>
+    <a href="{% url 'PB:L' user.id%}"><button class="btn btn-outline-danger">삭제</button></a>
+    </div>
+{% endblock %}
+{% block activeClass %}
+<script>
+    window.onload = function(){
+        document.getElementById('phonebook').className = 'nav-link active';
+    }
+    function mainlink(){
+        location.href="{% url 'PB:I' 1 %}"
+    }
+</script>
+{% endblock %}

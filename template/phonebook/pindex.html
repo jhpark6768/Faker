@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% block title %}졸음 쉼터{% endblock %}
+{% block activeClass %}
+<script>
+    window.onload = function(){
+        document.getElementById('phonebook').className = 'nav-link active';
+    }
+</script>
+{% endblock %}
+{% block cssblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+     h3 {
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    #btnsort {
+        margin:auto;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    
+
+{% endblock %}

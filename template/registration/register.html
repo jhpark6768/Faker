@@ -1,0 +1,168 @@
+{% extends 'index.html' %}
+{% block title %}계정 등록{% endblock %}
+{% block activeClass %}
+<script>
+    window.onload = function(){
+        document.getElementById('login').className = 'nav-link active';
+    }
+    function mainIndex(){
+        location.href='/account/register';
+    }
+    function check(){
+        let pwd1 = frm.password.value;
+        let pwd2 = frm.chkpwd.value;
+
+        if(pwd1 == pwd2){
+            $("#mymodal .modal-body").text('암호가 일치 합니다.');
+            $('#mymodal').show();
+        }else{
+            frm.password.value='';
+            frm.chkpwd.value="";
+            frm.password.focus();
+            $("#mymodal .modal-body").text('암호가 일치 하지 않습니다.');
+            $('#mymodal').show();
+        }
+    }
+    function closemodal(){
+        $("#mymodal").hide();
+    }
+    function ok(){
+        alert('회원가입 완료');
+    }
+</script>
+{% endblock %}
+{% block cssblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+
+     h3 {
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    #btnsort {
+        margin:auto;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    #imb {
+
+        margin: auto;
+    }
+    #helfont{
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: bold;
+    }
+    #fakfont{
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+    #infont{
+
+      
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+
+    }
+
+    #login {
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #logout{
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+    .input-group-text{
+    font-family: 'Noto Serif KR', serif;
+    }
+    .form-control{
+    font-family: 'Noto Serif KR', serif;
+    }
+    #table{
+        width:800px;
+        margin : auto;
+        
+    }
+    #gye{
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: bold;
+    }
+    #gyetable{
+        width:800px;
+        margin : auto; 
+    }
+</style>
+{% endblock %}
+{% block content %}
+    <div class="px-3 py-2 bg-white text-dark">
+        <form method='post' name="frm">{% csrf_token %}
+            <h3 id="gye">계정 등록</h3>
+            <table class="table table-hover" id="gyetable">
+                <tr>
+                    <th><span class="input-group-text">사용자 ID</span></th>
+                    <td><input type="text" class='form-control' name="username"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text">사용자 PW</span></th>
+                    <td><input type="password" class='form-control' name="password"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text">PW 확인</span></th>
+                    <td><input type="password" class='form-control' name="chkpwd" onchange="check()"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text">이름</span></th>
+                    <td><input type="text" class='form-control' name="first_name"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text">성</span></th>
+                    <td><input type="text" class='form-control' name="last_name"></td>
+                </tr>
+                <tr>
+                    <th><span class="input-group-text">이메일</span></th>
+                    <td><input type="email" class='form-control' name="email"></td>
+                </tr>
+            </table>
+            <div id="btnsort">
+                <input class="btn btn-outline-primary" type="submit" value="회원가입" onclick="ok()">
+                <input class="btn btn-outline-danger" type="reset" value="다시입력">
+            </div>
+        </form>
+        <div class="modal" tabindex="-1" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">암호 확인</h5>
+                        <button type="button" onclick="closemodal()"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="closemodal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

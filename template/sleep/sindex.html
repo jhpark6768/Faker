@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+{% block title %}졸음 인식{% endblock %}
+{% block activeClass %}
+<script>
+
+window.onload = function(){  
+  if("{{msg}}" != "") {
+  alert("{{msg}}");
+  }
+}
+
+</script>
+{% endblock %}
+{% block cssblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+
+<style>
+     h3 {
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    #btnsort {
+        margin:auto;
+        text-align: center;
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
+    #jolfont{
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: bold;
+
+    }
+    #fakfont{
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+    #infont{
+
+      
+      font-family: 'Dongle', sans-serif;
+      font-size: 25px;
+      font-weight: lighter;
+
+    }
+
+    #login {
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #logout{
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+    .input-group-text{
+    font-family: 'Noto Serif KR', serif;
+    }
+    .form-control{
+    font-family: 'Noto Serif KR', serif;
+    }
+    
+    #table{
+      width:800px;
+      margin : auto;
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="px-3 py-2 bg-white text-dark">
+        <h3 id="jolfont">졸음 이미지 분석</h3>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <table class="table" id="table">
+                <tr>
+                    <td><span class="input-group-text">이미지 분석 파일 가져오기</span></td>
+                    <td><input class='form-control' type="file" name="files"></td>
+                </tr>
+            </table><br>
+            <div id="btnsort">
+                <input class='btn btn-primary' type="submit" value="업로드">
+                <input class='btn btn-danger' type="reset" value="취소">
+            </div>
+        </form><br>
+    </div>
+{% endblock %}
+

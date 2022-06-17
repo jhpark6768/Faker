@@ -1,0 +1,112 @@
+{% extends 'index.html' %}
+{% block title %}계정 수정{% endblock %}
+{% block activeClass %}
+<script>
+
+    function withdraw(){
+        let check = confirm("탈퇴하시겠습니까?");
+        if(check){
+            location.href='/account/withdraw'
+        }
+    }
+</script>
+{% endblock %}
+{% block cssblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+    h3 {
+        margin:auto;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    #btnsort {
+        margin-left:40%;
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    #fakfont{
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+    #infont{
+
+      
+      font-family: 'Dongle', sans-serif;
+      font-size: 25px;
+      font-weight: lighter;
+
+    }
+
+    #login {
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #logout{
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+    #modfont{
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: bold;
+    }
+    .input-group-text{
+        font-family: 'Gowun Dodum', sans-serif;
+    }
+    .form-control{
+        font-family: 'Gowun Dodum', sans-serif; 
+    }
+    #gyesu{
+        width:800px;
+        margin : auto;
+    }
+</style>
+{% endblock %}
+{% block content %}
+    <form method='post' name="frm">{% csrf_token %}
+        <h3 id="modfont">계정 수정</h3>
+        <table class="table table-hover" id="gyesu">
+            <tr>
+                <th><span class="input-group-text">사용자 ID</span></th>
+                <td><input type="text" class='form-control' name="username" value="{{ user.username }}" readonly></td>
+            </tr>
+            <tr>
+                <th><span class="input-group-text">사용자 PW</span></th>
+                <td><input type="password" class='form-control' name="password"></td>
+            </tr>
+            <tr>
+                <th><span class="input-group-text">이름</span></th>
+                <td><input type="text" class='form-control' name="first_name" value="{{ user.first_name }}"></td>
+            </tr>
+            <tr>
+                <th><span class="input-group-text">성</span></th>
+                <td><input type="text" class='form-control' name="last_name" value="{{ user.last_name }}"> </td>
+            </tr>
+            <tr>
+                <th><span class="input-group-text">이메일</span></th>
+                <td><input type="email" class='form-control' name="email" value="{{ user.email }}"></td>
+            </tr>
+        </table><br><br>
+        <div id="btnsort">
+            <input class="btn btn-outline-primary" type="submit" value="계정수정">
+            <input class="btn btn-outline-warning" type="reset" value="다시입력">
+            <input class="btn btn-outline-danger" type="button" onclick="withdraw()" value="계정탈퇴"></a>
+        </div>
+    </form>
+{% endblock %}

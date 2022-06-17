@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block title %}로그아웃{% endblock %}
+{% block activeClass %}
+    <script>
+
+        function mainIndex(){
+            location.href='/index'
+        }
+    </script>
+{% endblock %}
+{% block cssblock %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
+<style>
+    #logfontt{
+       text-align: center;
+       font-family: 'Gowun Dodum', sans-serif;
+    }
+    #mainbtn{
+        width:300px;
+        margin:auto;
+    }
+    #helfont{
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: bold;
+    }
+    #fakfont{
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+    #infont{
+
+      
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+
+    }
+
+    #login {
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+
+    #logout{
+      font-family: 'Dongle', sans-serif;
+      font-size: 27px;
+      font-weight: lighter;
+    }
+    #footfont{
+      font-family: 'Noto Serif KR', serif;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div id="logfontt">
+    <h3 >로그아웃 완료<h3>
+    <input type="button" onclick="mainIndex()" value="메인으로" id="mainbtn">
+</div>
+{% endblock %}
